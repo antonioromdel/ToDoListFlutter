@@ -1,4 +1,4 @@
-# 📋 Flutter Task Manager
+# 📋 Flutter ToDo List
 
 Aplicación desarrollada en Flutter que permite a los usuarios agregar, editar, eliminar tareas y marcarlas como completadas.
 
