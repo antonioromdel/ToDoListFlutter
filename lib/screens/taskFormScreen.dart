@@ -81,7 +81,9 @@ class _MyWidgetState extends State<TaskFormScreen> {
                       }
                     },
                     child: Text(
-                        _isEditing ? "Guardar cambios" : "Añadir nueva tarea"))
+                      _isEditing ? "Guardar cambios" : "Añadir nueva tarea",
+                      style: TextStyle(color: Colors.white),
+                    ))
               ],
             )),
       ),

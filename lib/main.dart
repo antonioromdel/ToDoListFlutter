@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:todolist/models/task.dart';
 import 'package:todolist/providers/taskProviders.dart';
 import 'package:todolist/screens/taskListScreen.dart';
+import 'package:todolist/theme/appTheme.dart';
 
 void main() => runApp(MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => Taskproviders())],
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: Apptheme.lightTheme,
       home: TaskListScreen(),
     );
   }

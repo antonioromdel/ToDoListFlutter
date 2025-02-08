@@ -42,10 +42,29 @@ class TaskListScreen extends StatelessWidget {
                   })),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => TaskFormScreen())),
-          child: Icon(Icons.add)),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context).push(PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                TaskFormScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.0, 0.1);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+              var tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              var offSetAnimation = animation.drive(tween);
+              return SlideTransition(
+                  position: offSetAnimation, child: TaskFormScreen());
+            },
+          ));
+        },
+        label: Text("Añadir Tarea"),
+        icon: Icon(Icons.add),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
+      ),
     );
   }
 }
